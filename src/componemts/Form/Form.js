@@ -52,7 +52,7 @@ const Form = () => {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const id = Date.now().toString();
     const expense = {
@@ -64,10 +64,9 @@ const Form = () => {
       id: id
     };
     try {
-      addExpense(expense);
+      await addExpense(expense);
       const message = "Successfully added item!";
       showSuccess(message);
-      // navigate("/expenses")
     } catch (error) {
       const message = `Item not added due to error: ${error}`;
       showError(message);

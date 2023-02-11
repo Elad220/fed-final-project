@@ -1,32 +1,28 @@
-export const getExpense = () => JSON.parse(localStorage.getItem('expenses')) || [];
+export const getExpense = async () => JSON.parse(await localStorage.getItem('expenses')) || [];
 
-export const setExpense = expenses => {
-  localStorage.setItem('expenses', JSON.stringify(expenses));
+export const setExpense = async (expenses) => {
+  await localStorage.setItem('expenses', JSON.stringify(expenses));
 };
 
-// export const addExpense = expense => {
-//   const expenses = getExpense();
-//   setExpense([...expenses, expense]);
-// };
-export const addExpense = expense => {
+export const addExpense = async (expense) => {
   try {
-    const expenses = getExpense();
-    setExpense([...expenses, expense]);
+    const expenses = await getExpense();
+    await setExpense([...expenses, expense]);
   } catch (error) {
     console.error(`Error adding expense: ${error}`);
   }
 };
 
-export const deleteExpense = expenseId => {
-  const expenses = getExpense();
+export const deleteExpense = async (expenseId) => {
+  const expenses = await getExpense();
   const updatedExpenses = expenses.filter((expense) => expenseId !== expense.id);
-  setExpense(updatedExpenses);
+  await setExpense(updatedExpenses);
   return updatedExpenses;
 };
 
-export const editExpense = (expense) => {
-  const expenses = getExpense();
+export const editExpense = async (expense) => {
+  const expenses = await getExpense();
   const updatedExpenses = expenses.map((exp) => (exp.id === expense.id ? expense : exp));
-  setExpense(updatedExpenses);
+  await setExpense(updatedExpenses);
   return updatedExpenses;
 };

@@ -24,14 +24,19 @@ function Table() {
   const [editingExpenseId, setEditingExpenseId] = useState(null);
 
   useEffect(() => {
-    setExpenses(getExpense());
+    async function fetchExpenses () {
+        const expensesFromLocalStorage = await getExpense();
+        setExpenses(expensesFromLocalStorage);
+    }
+    fetchExpenses();
   }, []);
   const handleClick = (expenseId) => {
     setEditingExpenseId(expenseId);
   };
 
-  const handleDelete = (expenseId) => {
-    setExpenses(deleteExpense(expenseId));
+  async function handleDelete (expenseId) {
+    const expenseAfterRemoval = await deleteExpense(expenseId)
+    setExpenses(expenseAfterRemoval);
   };
 
   const handleCancel = () => {
@@ -59,7 +64,7 @@ function Table() {
             setSelectedYear(event.target.value);
           };
 
-  const handleSave = (event, expenseId) => {
+  async function handleSave (expenseId) {
     const expense = {
       expenseItem: document.getElementsByName("editName")[0].value,
       category: document.getElementsByName("editCategory")[0].value,
@@ -74,7 +79,8 @@ function Table() {
         return;
       }
     }
-    setExpenses(editExpense(expense));
+    const updatedExpenses = await editExpense(expense);
+    setExpenses(updatedExpenses);
     setEditingExpenseId(null);
   };
   let total = 0;
@@ -176,13 +182,13 @@ function Table() {
                   required
                 />
               ) : (
-                `${String(expense.costItem)}$`
+                `${expense.costItem}$`
               )}
             </StyledTd>
             <StyledTd>
               {editingExpenseId === expense.id ? (
                 <>
-                  <Button onClick={(event) => handleSave(event, expense.id)}>
+                  <Button onClick={() => handleSave(expense.id)}>
                     Save
                   </Button>
                   <Button onClick={handleCancel}>Cancel</Button>
@@ -202,7 +208,7 @@ function Table() {
         <StyledTfoot>
         <StyledTr>
             <StyledTd colspan="8">Total</StyledTd>
-            <StyledTd>{total}</StyledTd>
+            <StyledTd>{`${total}$`}</StyledTd>
             <StyledTd />
             <StyledTd />
             <StyledTd />
