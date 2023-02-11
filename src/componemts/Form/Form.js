@@ -35,6 +35,8 @@ const Form = () => {
     });
   };
 
+  // const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     expenseItem: "",
     category: "",
@@ -52,17 +54,20 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const id = Date.now().toString();
     const expense = {
-      item: event.target.elements.expenseItem.value,
+      expenseItem: event.target.elements.expenseItem.value,
       category: event.target.elements.category.value,
       description: event.target.elements.description.value,
-      createdDate: event.target.elements.date.value,
+      date: event.target.elements.date.value,
       costItem: event.target.elements.costItem.value,
+      id: id
     };
     try {
       addExpense(expense);
       const message = "Successfully added item!";
       showSuccess(message);
+      // navigate("/expenses")
     } catch (error) {
       const message = `Item not added due to error: ${error}`;
       showError(message);
@@ -95,6 +100,7 @@ const Form = () => {
           {costItem}
           <FormInput
             type="number"
+            min="0"
             name="costItem"
             value={formData.costItem}
             onChange={handleChange}

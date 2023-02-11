@@ -17,14 +17,16 @@ export const addExpense = expense => {
   }
 };
 
-export const deleteExpense = index => {
+export const deleteExpense = expenseId => {
   const expenses = getExpense();
-  const updatedExpenses = expenses.filter((_, i) => i !== index);
+  const updatedExpenses = expenses.filter((expense) => expenseId !== expense.id);
   setExpense(updatedExpenses);
+  return updatedExpenses;
 };
 
-export const editExpense = (index, expense) => {
+export const editExpense = (expense) => {
   const expenses = getExpense();
-  const updatedExpenses = expenses.map((exp, i) => (i === index ? expense : exp));
+  const updatedExpenses = expenses.map((exp) => (exp.id === expense.id ? expense : exp));
   setExpense(updatedExpenses);
+  return updatedExpenses;
 };
