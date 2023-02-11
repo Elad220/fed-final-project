@@ -13,5 +13,5 @@ export const PageContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #C0C0C0;
+  background-color: #c0c0c0;
 `;

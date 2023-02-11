@@ -13,6 +13,6 @@ const Navigation = () => {
       </NavList>
     </Navbar>
   );
-}
+};
 
 export default Navigation;

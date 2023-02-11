@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
-
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #C0C0C0;
+  background-color: #c0c0c0;
+`;
+
+export const InputWrapper = styled.div`
+  width: 100%;
+  max-width: 500px;
 `;
 
 export const FormInput = styled.input`
@@ -16,10 +20,9 @@ export const FormInput = styled.input`
   font-size: 18px;
   border-radius: 10px;
   border: none;
-  width: 100%;
-  max-width: 500px;
   background-color: white;
   box-shadow: 0 0 10px gray;
+  width: 400px;
 `;
 
 export const FormSelect = styled.select`
@@ -28,10 +31,9 @@ export const FormSelect = styled.select`
   font-size: 18px;
   border-radius: 10px;
   border: none;
-  width: 100%;
-  max-width: 500px;
   background-color: white;
   box-shadow: 0 0 10px gray;
+  width: 430px;
 `;
 
 export const FormTextArea = styled.textarea`
@@ -40,11 +42,10 @@ export const FormTextArea = styled.textarea`
   font-size: 18px;
   border-radius: 10px;
   border: none;
-  width: 100%;
-  max-width: 500px;
-  height: 200px;
   background-color: white;
   box-shadow: 0 0 10px gray;
+  width: 390px;
+  height: 50px;
 `;
 
 export const FormButton = styled.button`
@@ -52,21 +53,20 @@ export const FormButton = styled.button`
   margin: 20px 0;
   font-size: 18px;
   border-radius: 10px;
-  background-color: #00A36C;
+  background-color: #00a36c;
   color: white;
   width: 100%;
-  max-width: 500px;
   cursor: pointer;
   &:hover {
-    background-color: #2AAA8A;
+    background-color: #2aaa8a;
   }
   &:focus {
     outline: none;
     background-color: #478778;
   }
-  `;
+`;
 
-  export const FormLabel = styled.label`
+export const FormLabel = styled.label`
   font-size: 20px;
   color: black;
   margin-bottom: 10px;

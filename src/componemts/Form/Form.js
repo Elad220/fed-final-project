@@ -14,6 +14,7 @@ import {
   FormInput,
   FormContainer,
   FormLabel,
+  InputWrapper,
 } from "./styled";
 import { addExpense } from "../../localStorageUtils";
 import { useSnackbar } from "notistack";
@@ -61,7 +62,7 @@ const Form = () => {
       description: event.target.elements.description.value,
       date: event.target.elements.date.value,
       costItem: event.target.elements.costItem.value,
-      id: id
+      id: id,
     };
     try {
       await addExpense(expense);
@@ -85,6 +86,7 @@ const Form = () => {
       <div>
         <FormLabel>
           {expenseItem}
+          <InputWrapper>
           <FormInput
             type="text"
             name="expenseItem"
@@ -92,11 +94,13 @@ const Form = () => {
             onChange={handleChange}
             required
           />
+          </InputWrapper>
         </FormLabel>
       </div>
       <div>
         <FormLabel>
           {costItem}
+          <InputWrapper>
           <FormInput
             type="number"
             min="0"
@@ -105,11 +109,13 @@ const Form = () => {
             onChange={handleChange}
             required
           />
+          </InputWrapper>
         </FormLabel>
       </div>
       <div>
         <FormLabel>
           {category}
+          <InputWrapper>
           <FormSelect
             name="category"
             value={formData.category}
@@ -125,22 +131,26 @@ const Form = () => {
               </option>
             ))}
           </FormSelect>
+          </InputWrapper>
         </FormLabel>
       </div>
       <div>
         <FormLabel>
           {description}
+          <InputWrapper>
           <FormTextArea
             name="description"
             value={formData.description}
             onChange={handleChange}
             required
           />
+          </InputWrapper>
         </FormLabel>
       </div>
       <div>
         <FormLabel>
           {pickDate}
+          <InputWrapper>
           <FormInput
             type="date"
             name="date"
@@ -148,6 +158,7 @@ const Form = () => {
             onChange={handleChange}
             required
           />
+          </InputWrapper>
         </FormLabel>
       </div>
       <FormButton type="submit">Submit</FormButton>

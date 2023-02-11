@@ -1,7 +1,9 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Navbar = styled.nav`
+  position: sticky;
+  top: 0;
   background-color: #333;
   display: flex;
   justify-content: space-between;
@@ -31,8 +33,6 @@ export const NavLink = styled(Link)`
   transition: color 0.2s ease-in-out;
 
   &:hover {
-    color: #647C90;
+    color: #647c90;
   }
 `;
-
-

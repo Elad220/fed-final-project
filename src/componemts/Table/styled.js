@@ -2,20 +2,32 @@ import styled from 'styled-components';
 
 export const StyledTable = styled.table`
   width: 120vh;
+  margin-bottom: 30px;
   border-collapse: collapse;
   text-align: left;
-  background-color: #C0C0C0;
   table-layout: fixed; /* add this line */
+  th {
+    background-color: #333;
+    color: white;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #B9B7BD;
+  }
 `;
 
 export const StyledThead = styled.thead`
-  background-color: #333;
   color: white;
 `;
 
 
 export const StyledTh = styled.th`
-  padding: 12px;
+cursor: pointer;  
+padding: 12px;
 `;
 
 export const StyledTbody = styled.tbody`
@@ -23,10 +35,7 @@ export const StyledTbody = styled.tbody`
 `;
 
 export const StyledTr = styled.tr`
-    width: 100%;
-    &:nth-child(even) {
-        background-color: #dddddd;
-    }
+  width: 100%;
 `;
 
 export const StyledTd = styled.td`
@@ -98,4 +107,12 @@ export const Select = styled.select`
     background-color: #ccc;
     color: #fff;
   }
+`;
+
+export const Message = styled.p`
+font-size: 24px;
+color: #555;
+text-align: center;
+margin-top: 40px;
+font-weight: bold;
 `;
