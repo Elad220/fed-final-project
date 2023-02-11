@@ -4,22 +4,9 @@ import { SnackbarProvider } from "notistack";
 import { Route, BrowserRouter as Router, Routes} from "react-router-dom";
 import Form from "./componemts/Form/Form";
 import Table from "./componemts/Table/Table";
-import OurChart from "./componemts/Chart/Chart";
+import ChartComponent from "./componemts/Chart/Chart";
 import Navigation from "./componemts/Navigation/Navigation";
 
-// function App() {
-//   return (
-//     <SnackbarProvider
-//       maxSnack={3}
-//       anchorOrigin={{
-//         vertical: "bottom",
-//         horizontal: "left",
-//       }}
-//     >
-//       <Page title={"Welcome to our app!"} component={<Form />} />
-//     </SnackbarProvider>
-//   );
-// }
 function App() {
   return (
     <Router>
@@ -34,7 +21,7 @@ function App() {
          <Navigation/>
         <Routes>
           <Route exact path="/" element={<Page title={"Welcome to our app!"} components={[<Form />]} />} />
-          <Route path="/expenses" element={<Page title={"Your expenses:"} components={[<Table />]} />} />
+          <Route path="/expenses" element={<Page title={"Your expenses:"} components={[<ChartComponent />, <Table />]} />} />
           </Routes>
         </div>
       </SnackbarProvider>
