@@ -1,7 +1,7 @@
 import "./App.css";
 import { Page } from "./componemts/Page/Page";
 import { SnackbarProvider } from "notistack";
-import { Route, Link, BrowserRouter as Router, Routes} from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes} from "react-router-dom";
 import Form from "./componemts/Form/Form";
 import Table from "./componemts/Table/Table";
 import OurChart from "./componemts/Chart/Chart";
@@ -34,7 +34,7 @@ function App() {
          <Navigation/>
         <Routes>
           <Route exact path="/" element={<Page title={"Welcome to our app!"} components={[<Form />]} />} />
-          <Route path="/expenses" element={<Page title={"Your expenses:"} components={[<Table />, <OurChart />]} />} />
+          <Route path="/expenses" element={<Page title={"Your expenses:"} components={[<Table />]} />} />
           </Routes>
         </div>
       </SnackbarProvider>
