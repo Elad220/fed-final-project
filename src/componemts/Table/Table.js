@@ -67,20 +67,20 @@ const Table = () => {
   });
 
   useEffect(() => {
-    async function fetchExpenses() {
+    const fetchExpenses = async () => {
       const expensesFromLocalStorage = await getExpense();
       setExpenses(expensesFromLocalStorage);
-    }
+    };
     fetchExpenses();
   }, []);
   const handleClick = (expenseId) => {
     setEditingExpenseId(expenseId);
   };
 
-  async function handleDelete(expenseId) {
+  const handleDelete = async (expenseId) => {
     const expenseAfterRemoval = await deleteExpense(expenseId);
     setExpenses(expenseAfterRemoval);
-  }
+  };
 
   const handleCancel = () => {
     setEditingExpenseId(null);
@@ -93,7 +93,7 @@ const Table = () => {
     setSelectedYear(event.target.value);
   };
 
-  async function handleSave(expenseId) {
+  const handleSave = async (expenseId) => {
     const expense = {
       expenseItem: document.getElementsByName("editName")[0].value,
       category: document.getElementsByName("editCategory")[0].value,
@@ -111,7 +111,7 @@ const Table = () => {
     const updatedExpenses = await editExpense(expense);
     setExpenses(updatedExpenses);
     setEditingExpenseId(null);
-  }
+  };
   let total = 0;
 
   filteredData.forEach((expense) => {
