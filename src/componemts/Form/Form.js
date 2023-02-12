@@ -61,7 +61,7 @@ const Form = () => {
       category: event.target.elements.category.value,
       description: event.target.elements.description.value,
       date: event.target.elements.date.value,
-      costItem: event.target.elements.costItem.value,
+      costItem: parseInt(event.target.elements.costItem.value),
       id: id,
     };
     try {
