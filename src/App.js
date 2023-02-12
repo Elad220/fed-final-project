@@ -1,13 +1,19 @@
-import "./App.css";
-import Page from "./componemts/Page/Page";
-import { SnackbarProvider } from "notistack";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Form from "./componemts/Form/Form";
-import Table from "./componemts/Table/Table";
-import ChartComponent from "./componemts/Chart/Chart";
-import Navigation from "./componemts/Navigation/Navigation";
-import Footer from "./componemts/Footer/Footer";
+/* Written by:
+Elad Asaf - 208434597
+Lidar Baruch - 207233545
+Guy Ofir - 318597259
+*/
+import './App.css';
+import Page from './componemts/Page/page';
+import { SnackbarProvider } from 'notistack';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Form from './componemts/Form/form';
+import Table from './componemts/Table/table';
+import ChartComponent from './componemts/Chart/chart';
+import Navigation from './componemts/Navigation/navigation';
+import Footer from './componemts/Footer/footer';
 
+/* This is the main app component */
 const App = () => {
   return (
     <Router>
@@ -17,16 +23,16 @@ const App = () => {
           <Routes>
             <Route
               exact
-              path="/"
+              path='/'
               element={
-                <Page title={"Welcome to our app!"} components={[<Form />]} />
+                <Page title={'Welcome to our app!'} components={[<Form />]} />
               }
             />
             <Route
-              path="/expenses"
+              path='/expenses'
               element={
                 <Page
-                  title={"Your expenses:"}
+                  title={'Your expenses:'}
                   components={[<ChartComponent />, <Table />]}
                 />
               }

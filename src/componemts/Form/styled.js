@@ -1,4 +1,9 @@
-import styled from "styled-components";
+/* Written by:
+Elad Asaf - 208434597
+Lidar Baruch - 207233545
+Guy Ofir - 318597259
+*/
+import styled from 'styled-components';
 
 export const FormContainer = styled.form`
   display: flex;

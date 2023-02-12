@@ -1,5 +1,10 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+/* Written by:
+Elad Asaf - 208434597
+Lidar Baruch - 207233545
+Guy Ofir - 318597259
+*/
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Navbar = styled.nav`
   position: sticky;
