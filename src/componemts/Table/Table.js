@@ -193,31 +193,22 @@ const Table = () => {
             </Select>
           </FilterContainer>
           <StyledTable>
-            <StyledThead>
-              <StyledTr>
-                <StyledTh onClick={() => handleSort('expenseItem')}>
-                  {itemHeaderText}
-                  <SortIcon />
-                </StyledTh>
-                <StyledTh onClick={() => handleSort('category')}>
-                  {categoryHeaderText}
-                  <SortIcon />
-                </StyledTh>
-                <StyledTh onClick={() => handleSort('description')}>
-                  {descriptionHeaderText}
-                  <SortIcon />
-                </StyledTh>
-                <StyledTh onClick={() => handleSort('date')}>
-                  {createdDateHeaderText}
-                  <SortIcon />
-                </StyledTh>
-                <StyledTh onClick={() => handleSort('costItem')}>
-                  {costHeaderText}
-                  <SortIcon />
-                </StyledTh>
-                <StyledTh>Actions</StyledTh>
-              </StyledTr>
-            </StyledThead>
+          <StyledThead>
+  <StyledTr>
+    {[      ['expenseItem', itemHeaderText],
+      ['category', categoryHeaderText],
+      ['description', descriptionHeaderText],
+      ['date', createdDateHeaderText],
+      ['costItem', costHeaderText],
+    ].map(([sortKey, headerText]) => (
+      <StyledTh key={sortKey} onClick={() => handleSort(sortKey)}>
+        {headerText}
+        <SortIcon />
+      </StyledTh>
+    ))}
+    <StyledTh>Actions</StyledTh>
+  </StyledTr>
+</StyledThead>
             <StyledTbody>
               {sortedData.map((expense) => (
                 <StyledTr key={expense.expenseItem}>

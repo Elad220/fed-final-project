@@ -33,7 +33,16 @@ const App = () => {
               element={
                 <Page
                   title={'Your expenses:'}
-                  components={[<ChartComponent />, <Table />]}
+                  components={[<Table />]}
+                />
+              }
+            />
+            <Route
+              path='/chart'
+              element={
+                <Page
+                  title={'Your expenses in a chart:'}
+                  components={[<ChartComponent />]}
                 />
               }
             />

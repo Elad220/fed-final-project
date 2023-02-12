@@ -56,8 +56,8 @@ const ChartComponent = () => {
     the options arguments to it */
     <Chart
       chartType='PieChart'
-      width='100vh'
-      height='200px'
+      width='200vh'
+      height='750px'
       data={chartData}
       options={{
         title: 'Category Totals',

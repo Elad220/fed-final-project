@@ -17,6 +17,9 @@ const Navigation = () => {
         <NavItem>
           <NavLink to='/expenses'>{expensesLinkText}</NavLink>
         </NavItem>
+        <NavItem>
+          <NavLink to='/chart'>Chart</NavLink>
+        </NavItem>
       </NavList>
     </Navbar>
   );

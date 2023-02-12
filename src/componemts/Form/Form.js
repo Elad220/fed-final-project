@@ -152,7 +152,7 @@ const Form = () => {
               onChange={handleChange}
               required
             >
-              <option value='' disabled selected hidden>
+              <option value='' disabled hidden>
                 {chooseCategoryText}
               </option>
               {categoriesOptions.map((option) => (
