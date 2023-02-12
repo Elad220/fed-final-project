@@ -1,4 +1,4 @@
-import { PieChart} from "recharts";
+import { PieChart } from "recharts";
 import styled from "styled-components";
 
 export const StyledPieChart = styled(PieChart)`

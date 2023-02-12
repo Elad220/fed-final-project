@@ -87,13 +87,13 @@ const Form = () => {
         <FormLabel>
           {expenseItem}
           <InputWrapper>
-          <FormInput
-            type="text"
-            name="expenseItem"
-            value={formData.expenseItem}
-            onChange={handleChange}
-            required
-          />
+            <FormInput
+              type="text"
+              name="expenseItem"
+              value={formData.expenseItem}
+              onChange={handleChange}
+              required
+            />
           </InputWrapper>
         </FormLabel>
       </div>
@@ -101,14 +101,14 @@ const Form = () => {
         <FormLabel>
           {costItem}
           <InputWrapper>
-          <FormInput
-            type="number"
-            min="0"
-            name="costItem"
-            value={formData.costItem}
-            onChange={handleChange}
-            required
-          />
+            <FormInput
+              type="number"
+              min="0"
+              name="costItem"
+              value={formData.costItem}
+              onChange={handleChange}
+              required
+            />
           </InputWrapper>
         </FormLabel>
       </div>
@@ -116,21 +116,21 @@ const Form = () => {
         <FormLabel>
           {category}
           <InputWrapper>
-          <FormSelect
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            required
-          >
-            <option value="" disabled selected hidden>
-              Choose a category
-            </option>
-            {categoriesOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
+            <FormSelect
+              name="category"
+              value={formData.category}
+              onChange={handleChange}
+              required
+            >
+              <option value="" disabled selected hidden>
+                Choose a category
               </option>
-            ))}
-          </FormSelect>
+              {categoriesOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </FormSelect>
           </InputWrapper>
         </FormLabel>
       </div>
@@ -138,12 +138,12 @@ const Form = () => {
         <FormLabel>
           {description}
           <InputWrapper>
-          <FormTextArea
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            required
-          />
+            <FormTextArea
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              required
+            />
           </InputWrapper>
         </FormLabel>
       </div>
@@ -151,13 +151,13 @@ const Form = () => {
         <FormLabel>
           {pickDate}
           <InputWrapper>
-          <FormInput
-            type="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-            required
-          />
+            <FormInput
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              required
+            />
           </InputWrapper>
         </FormLabel>
       </div>

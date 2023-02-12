@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledTable = styled.table`
   width: 120vh;
   margin-bottom: 30px;
   border-collapse: collapse;
   text-align: left;
-  table-layout: fixed; 
+  table-layout: fixed;
   th {
     background-color: #333;
     color: white;
@@ -16,7 +16,7 @@ export const StyledTable = styled.table`
   }
 
   tbody tr:nth-child(odd) {
-    background-color: #B9B7BD;
+    background-color: #b9b7bd;
   }
 `;
 
@@ -24,10 +24,9 @@ export const StyledThead = styled.thead`
   color: white;
 `;
 
-
 export const StyledTh = styled.th`
-cursor: pointer;  
-padding: 12px;
+  cursor: pointer;
+  padding: 12px;
 `;
 
 export const StyledTbody = styled.tbody`
@@ -44,7 +43,9 @@ export const StyledTd = styled.td`
   word-wrap: break-word;
   box-sizing: border-box;
   position: relative; /* position relative to allow absolute positioning of the input */
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     width: 100%; /* set the width to 100% so it fills the entire cell */
     box-sizing: border-box; /* include padding and borders in the width */
     position: absolute; /* position the input absolutely within the cell */
@@ -76,7 +77,6 @@ export const StyledTfoot = styled.tfoot`
     }
   }
 `;
-
 
 export const Button = styled.button`
   padding: 12px 6px;
@@ -110,9 +110,9 @@ export const Select = styled.select`
 `;
 
 export const Message = styled.p`
-font-size: 24px;
-color: #555;
-text-align: center;
-margin-top: 40px;
-font-weight: bold;
+  font-size: 24px;
+  color: #555;
+  text-align: center;
+  margin-top: 40px;
+  font-weight: bold;
 `;

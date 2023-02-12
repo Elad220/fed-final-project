@@ -37,5 +37,5 @@ const App = () => {
       </SnackbarProvider>
     </Router>
   );
-}
+};
 export default App;
