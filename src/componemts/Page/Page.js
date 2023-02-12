@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledHeader, PageContainer } from "./styled";
 
-export const Page = ({ components, title }) => {
+const Page = ({ components, title }) => {
   return (
     <PageContainer>
       <StyledHeader>{title}</StyledHeader>
@@ -13,3 +13,4 @@ export const Page = ({ components, title }) => {
     </PageContainer>
   );
 };
+export default Page;

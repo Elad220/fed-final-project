@@ -20,7 +20,7 @@ import {
 import { categoriesOptions, years, months } from "../../consts";
 import SortIcon from "../SortIcon/SortIcon";
 
-function Table() {
+const Table = () => {
   const [expenses, setExpenses] = useState([]);
   const [editingExpenseId, setEditingExpenseId] = useState(null);
   const [sortColumn, setSortColumn] = useState(null);

@@ -1,5 +1,5 @@
 import "./App.css";
-import { Page } from "./componemts/Page/Page";
+import Page from "./componemts/Page/Page";
 import { SnackbarProvider } from "notistack";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Form from "./componemts/Form/Form";
@@ -8,16 +8,10 @@ import ChartComponent from "./componemts/Chart/Chart";
 import Navigation from "./componemts/Navigation/Navigation";
 import Footer from "./componemts/Footer/Footer";
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <SnackbarProvider
-        maxSnack={3}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "left",
-        }}
-      >
+      <SnackbarProvider maxSnack={3}>
         <div>
           <Navigation />
           <Routes>
