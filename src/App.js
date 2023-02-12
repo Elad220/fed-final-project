@@ -12,6 +12,7 @@ import Table from './componemts/Table/table';
 import ChartComponent from './componemts/Chart/chart';
 import Navigation from './componemts/Navigation/navigation';
 import Footer from './componemts/Footer/footer';
+import { chartRoute, expensesRoute, expensesTitleMessage, formRoute, formTitleMessage, chartTitleMessage } from './consts';
 
 /* This is the main app component */
 const App = () => {
@@ -23,26 +24,26 @@ const App = () => {
           <Routes>
             <Route
               exact
-              path='/'
+              path={formRoute}
               element={
-                <Page title={'Welcome to our app!'} components={[<Form />]} />
+                <Page title={formTitleMessage} component={<Form />} />
               }
             />
             <Route
-              path='/expenses'
+              path={expensesRoute}
               element={
                 <Page
-                  title={'Your expenses:'}
-                  components={[<Table />]}
+                  title={expensesTitleMessage}
+                  component={<Table />}
                 />
               }
             />
             <Route
-              path='/chart'
+              path={chartRoute}
               element={
                 <Page
-                  title={'Your expenses in a chart:'}
-                  components={[<ChartComponent />]}
+                  title={chartTitleMessage}
+                  component={<ChartComponent />}
                 />
               }
             />

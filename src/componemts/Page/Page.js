@@ -7,15 +7,11 @@ import React from 'react';
 import { StyledHeader, PageContainer } from './styled';
 
 /* This component defines a reusable page component for the form and table pages to use */
-const Page = ({ components, title }) => {
+const Page = ({ component, title }) => {
   return (
     <PageContainer>
       <StyledHeader>{title}</StyledHeader>
-      {components.map((component, index) => (
-        <div key={index} style={{ flex: 1 }}>
-          {component}
-        </div>
-      ))}
+      {component}
     </PageContainer>
   );
 };

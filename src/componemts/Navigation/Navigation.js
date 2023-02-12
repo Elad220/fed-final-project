@@ -4,7 +4,7 @@ Lidar Baruch - 207233545
 Guy Ofir - 318597259
 */
 import { Navbar, NavItem, NavList, NavLink } from './styled';
-import { formLinkText, expensesLinkText } from '../../consts';
+import { formLinkText, expensesLinkText, formRoute, expensesRoute, chartRoute } from '../../consts';
 
 /* This component defines a Navbar component with the form's route and the expenses route */
 const Navigation = () => {
@@ -12,13 +12,13 @@ const Navigation = () => {
     <Navbar>
       <NavList>
         <NavItem>
-          <NavLink to='/'>{formLinkText}</NavLink>
+          <NavLink to={formRoute}>{formLinkText}</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to='/expenses'>{expensesLinkText}</NavLink>
+          <NavLink to={expensesRoute}>{expensesLinkText}</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to='/chart'>Chart</NavLink>
+          <NavLink to={chartRoute}>Chart</NavLink>
         </NavItem>
       </NavList>
     </Navbar>

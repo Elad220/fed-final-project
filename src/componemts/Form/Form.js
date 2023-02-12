@@ -4,6 +4,7 @@ Lidar Baruch - 207233545
 Guy Ofir - 318597259
 */
 import React, { useState } from 'react';
+import FormField from '../FormField/formfield';
 import {
   category,
   expenseItem,
@@ -105,6 +106,10 @@ const Form = () => {
       costItem: 0,
     });
   };
+  const options = [
+    { value: '', label: chooseCategoryText, disabled: true, hidden: true },
+    ...categoriesOptions.map((option) => ({ value: option, label: option }))
+  ];
 
   /* This is a form component that takes user inputs for an expense item, its cost,
    category, description, and date. It uses the useState and handleChange hook to update the form
@@ -113,86 +118,52 @@ const Form = () => {
       input fields and a submit button. */
   return (
     <FormContainer onSubmit={handleSubmit}>
-      <div>
-        <FormLabel>
-          {expenseItem}
-          <InputWrapper>
-            <FormInput
+            <FormField
               type='text'
+              label={expenseItem}
               name='expenseItem'
               value={formData.expenseItem}
               onChange={handleChange}
               required
             />
-          </InputWrapper>
-        </FormLabel>
-      </div>
-      <div>
-        <FormLabel>
-          {costItem}
-          <InputWrapper>
-            <FormInput
+            <FormField
               type='number'
               min='0'
+              label={costItem}
               name='costItem'
               value={formData.costItem}
               onChange={handleChange}
               required
             />
-          </InputWrapper>
-        </FormLabel>
-      </div>
-      <div>
-        <FormLabel>
-          {category}
-          <InputWrapper>
-            <FormSelect
+            <FormField
               name='category'
+              label={category}
+              element={'select'}
+              options={options}
               value={formData.category}
               onChange={handleChange}
               required
-            >
-              <option value='' disabled hidden>
-                {chooseCategoryText}
-              </option>
-              {categoriesOptions.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </FormSelect>
-          </InputWrapper>
-        </FormLabel>
-      </div>
-      <div>
-        <FormLabel>
-          {description}
-          <InputWrapper>
-            <FormTextArea
+            />
+            <FormField
+            element={'textarea'}
               name='description'
+              label={description}
+              rows={5}
+              cols={30}
               value={formData.description}
               onChange={handleChange}
               required
             />
-          </InputWrapper>
-        </FormLabel>
-      </div>
-      <div>
-        <FormLabel>
-          {pickDate}
-          <InputWrapper>
-            <FormInput
+            <FormField
               type='date'
               name='date'
               min='2020-01-01'
+              label={pickDate}
               max={new Date().toISOString().split('T')[0]}
               value={formData.date}
               onChange={handleChange}
               required
             />
-          </InputWrapper>
-        </FormLabel>
-      </div>
       <FormButton type='submit'>{submitText}</FormButton>
     </FormContainer>
   );
