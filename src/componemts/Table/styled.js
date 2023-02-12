@@ -5,7 +5,7 @@ export const StyledTable = styled.table`
   margin-bottom: 30px;
   border-collapse: collapse;
   text-align: left;
-  table-layout: fixed; /* add this line */
+  table-layout: fixed; 
   th {
     background-color: #333;
     color: white;

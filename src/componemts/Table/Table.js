@@ -32,9 +32,14 @@ function Table() {
     if (selectedMonth && selectedYear) {
       return expense.date.startsWith(selectedYear + "-" + selectedMonth);
     } else if (selectedMonth) {
-      return expense.date.startsWith(
-        `${String(new Date().getFullYear())}-` + selectedMonth
-      );
+      const yearStart = 2020; // change this to the earliest year of interest
+      const currentYear = new Date().getFullYear();
+      for (let year = yearStart; year <= currentYear; year++) {
+        if (expense.date.startsWith(`${year}-${selectedMonth}`)) {
+          return true;
+        }
+      }
+      return false;
     } else if (selectedYear) {
       return expense.date.startsWith(selectedYear);
     } else {
