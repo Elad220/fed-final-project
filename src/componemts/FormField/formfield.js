@@ -1,3 +1,8 @@
+/* Written by:
+Elad Asaf - 208434597
+Lidar Baruch - 207233545
+Guy Ofir - 318597259
+*/
 import React from 'react';
 import { FormLabel, FormInput, InputContainer, InputWrapper, FormTextArea, FormSelect } from '../Form/styled';
 
