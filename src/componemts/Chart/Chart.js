@@ -74,7 +74,6 @@ const ChartComponent = () => {
           />
         </>
       )}
-      ;
     </div>
   );
 };
