@@ -17,12 +17,7 @@ import {
 } from '../../consts.js';
 import {
   FormButton,
-  FormTextArea,
-  FormSelect,
-  FormInput,
   FormContainer,
-  FormLabel,
-  InputWrapper,
 } from './styled';
 import { addExpense } from '../../localStorageUtils';
 import { useSnackbar } from 'notistack';
