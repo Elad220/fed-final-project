@@ -17,7 +17,7 @@ import { chartRoute, expensesRoute, expensesTitleMessage, formRoute, formTitleMe
 /* This is the main app component */
 const App = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <SnackbarProvider maxSnack={3}>
         <div>
           <Navigation />
