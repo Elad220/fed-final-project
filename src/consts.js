@@ -4,7 +4,7 @@ Lidar Baruch - 207233545
 Guy Ofir - 318597259
 */
 export const expenseItem = 'Expense item: ';
-export const formTitleMessage = 'Welcome to the Cost Manager app!';
+export const formTitleMessage = 'Welcome to Cost Manager app!';
 export const chartTitleMessage = 'Your expenses in pie chart:';
 export const expensesTitleMessage = 'Your expenses:';
 export const formRoute = '/';
