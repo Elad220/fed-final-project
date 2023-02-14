@@ -104,6 +104,7 @@ export const FilterContainer = styled.div`
 
 export const Select = styled.select`
   background-color: #fff;
+  width: 12%;
   color: #333;
   border: 1px solid #ccc;
   padding: 5px 10px;

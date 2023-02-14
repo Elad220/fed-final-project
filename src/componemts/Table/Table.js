@@ -39,6 +39,8 @@ import {
   deleteButtonText,
   editButtonText,
   totalText,
+  currencies,
+  chooseCurrencyText,
 } from '../../consts';
 import SortIcon from '../SortIcon/sortIcon';
 
@@ -52,6 +54,7 @@ const Table = () => {
   const [sortDirection, setSortDirection] = useState('asc');
   const [selectedMonth, setSelectedMonth] = useState('');
   const [selectedYear, setSelectedYear] = useState('');
+  const [currency, setCurrency] = useState(currencies[0].label);
 
   useEffect(() => {
     const fetchExpenses = async () => {
@@ -90,6 +93,10 @@ const Table = () => {
       setSortColumn(columnName);
       setSortDirection('asc');
     }
+  };
+
+  const handleCurrencyChange = (event) => {
+    setCurrency(event.target.value);
   };
 
   /* This code sorts the filteredData array by the sortColumn state and the sortDirection state. */
@@ -192,23 +199,34 @@ const Table = () => {
               ))}
             </Select>
           </FilterContainer>
+          <FilterContainer>
+            <label>{chooseCurrencyText}</label>
+            <Select value={currency} onChange={handleCurrencyChange}>
+              {currencies.map((c) => (
+                <option key={c.label} value={c.label}>
+                  {c.value}
+                </option>
+              ))}
+            </Select>
+          </FilterContainer>
           <StyledTable>
-          <StyledThead>
-  <StyledTr>
-    {[      ['expenseItem', itemHeaderText],
-      ['category', categoryHeaderText],
-      ['description', descriptionHeaderText],
-      ['date', createdDateHeaderText],
-      ['costItem', costHeaderText],
-    ].map(([sortKey, headerText]) => (
-      <StyledTh key={sortKey} onClick={() => handleSort(sortKey)}>
-        {headerText}
-        <SortIcon />
-      </StyledTh>
-    ))}
-    <StyledTh>Actions</StyledTh>
-  </StyledTr>
-</StyledThead>
+            <StyledThead>
+              <StyledTr>
+                {[
+                  ['expenseItem', itemHeaderText],
+                  ['category', categoryHeaderText],
+                  ['description', descriptionHeaderText],
+                  ['date', createdDateHeaderText],
+                  ['costItem', costHeaderText],
+                ].map(([sortKey, headerText]) => (
+                  <StyledTh key={sortKey} onClick={() => handleSort(sortKey)}>
+                    {headerText}
+                    <SortIcon />
+                  </StyledTh>
+                ))}
+                <StyledTh>Actions</StyledTh>
+              </StyledTr>
+            </StyledThead>
             <StyledTbody>
               {sortedData.map((expense) => (
                 <StyledTr key={expense.expenseItem}>
@@ -275,7 +293,7 @@ const Table = () => {
                         required
                       />
                     ) : (
-                      `${expense.costItem}$`
+                      `${expense.costItem} ${currency}`
                     )}
                   </StyledTd>
                   <StyledTd>
@@ -305,7 +323,7 @@ const Table = () => {
             <StyledTfoot>
               <StyledTr>
                 <StyledTd colspan='8'>{totalText}</StyledTd>
-                <StyledTd>{`${total}$`}</StyledTd>
+                <StyledTd>{`${total} ${currency}`}</StyledTd>
                 <StyledTd />
                 <StyledTd />
                 <StyledTd />
