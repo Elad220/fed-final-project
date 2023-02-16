@@ -9,7 +9,7 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vh;
+  width:100%;
   height: 100%;
   background-color: #c0c0c0;
 `;
@@ -60,7 +60,7 @@ export const FormButton = styled.button`
   border-radius: 10px;
   background-color: #00a36c;
   color: white;
-  width: 70%;
+  width: 40%;
   cursor: pointer;
   &:hover {
     background-color: #2aaa8a;

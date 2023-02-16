@@ -7,7 +7,8 @@ import styled from 'styled-components';
 
 export const StyledHeader = styled.h1`
   color: gray;
-  font-size: 36px;
+  font-size: 2rem;
+  margin: 30px;
   font-weight: bold;
   text-align: center;
 `;
@@ -17,6 +18,6 @@ export const PageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 49rem;
   background-color: #c0c0c0;
 `;

@@ -12,8 +12,10 @@ export const FooterContainer = styled.footer`
   background-color: #333;
   color: #fff;
   height: 50px;
+  width: 100%;
 `;
 
 export const FooterText = styled.p`
   margin: 0;
+  font-size: 1.2rem;
 `;

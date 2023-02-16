@@ -6,14 +6,18 @@ Guy Ofir - 318597259
 import styled from 'styled-components';
 
 export const StyledTable = styled.table`
-  width: 120vh;
+  width: 95%;
   margin-bottom: 30px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
   border-collapse: collapse;
   text-align: left;
   table-layout: fixed;
   th {
     background-color: #333;
     color: white;
+    font-size: 1.5vw;
   }
 
   tbody tr:nth-child(even) {
@@ -40,6 +44,7 @@ export const StyledTbody = styled.tbody`
 
 export const StyledTr = styled.tr`
   width: 100%;
+  
 `;
 
 export const StyledTd = styled.td`
@@ -84,9 +89,9 @@ export const StyledTfoot = styled.tfoot`
 `;
 
 export const Button = styled.button`
-  padding: 12px 6px;
+  padding: 8px 6px;
   margin-right: 6px;
-  width: 60px; // set a fixed width of 80 pixels
+  width: 60px;
   background-color: #333;
   color: white;
   border: none;
@@ -96,14 +101,50 @@ export const Button = styled.button`
     background-color: #444;
   }
 `;
+export const ClearFiltersButton = styled.button`
+  padding: 10px 5px;
+  margin: 0 20px;
+  width: 12%;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #444;
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+`;
+
 export const FilterContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 20px;
+  width: 100%;
+`;
+
+export const Label = styled.label`
+font-size: 20px;
+display: flex;
+width: 20%;
+margin: 10px 10px;
+color: black;
+`;
+
+export const SelectOption = styled.option`
+  font-size: 14px;
+  padding: 5px;
 `;
 
 export const Select = styled.select`
   background-color: #fff;
+  margin: 0 20px;
   width: 12%;
   color: #333;
   border: 1px solid #ccc;

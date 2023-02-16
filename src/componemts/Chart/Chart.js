@@ -9,6 +9,7 @@ import { categoriesOptions, emptyTableText } from '../../consts';
 import { Chart } from 'react-google-charts';
 import countByCategory from './utils';
 import { Message } from '../Table/styled';
+import { ChartContainer } from './styled';
 
 const ChartComponent = () => {
   /* two state variables, expenseData and chartData, and sets their initial values to an empty array
@@ -56,25 +57,26 @@ const ChartComponent = () => {
   return (
     /* This code creates the pie chart component using the react-google-charts component and passes
     the options arguments to it. If there aren't any expenses, "nothing to show yet!" is presented. */
-    <div>
+    <ChartContainer>
       {expenseData.length === 0 ? (
         <Message> {emptyTableText} </Message>
       ) : (
         <>
           <Chart
             chartType='PieChart'
-            width='200vh'
-            height='750px'
+            width='33rem'
+            height='25rem'
             data={chartData}
             options={{
               title: 'Category Totals',
               is3D: true,
               backgroundColor: 'transparent',
+
             }}
           />
         </>
       )}
-    </div>
+    </ChartContainer>
   );
 };
 

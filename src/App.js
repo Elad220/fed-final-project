@@ -19,7 +19,6 @@ const App = () => {
   return (
     <Router>
       <SnackbarProvider maxSnack={3}>
-        <div>
           <Navigation />
           <Routes>
             <Route
@@ -49,7 +48,6 @@ const App = () => {
             />
           </Routes>
           <Footer />
-        </div>
       </SnackbarProvider>
     </Router>
   );

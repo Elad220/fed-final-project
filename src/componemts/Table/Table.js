@@ -16,6 +16,10 @@ import {
   Select,
   StyledTfoot,
   Message,
+  Label,
+  SelectOption,
+  ButtonWrapper,
+  ClearFiltersButton
 } from './styled';
 import {
   getExpense,
@@ -127,6 +131,11 @@ const Table = () => {
     setEditingExpenseId(null);
   };
 
+  const handleClearFliter = () => {
+    setSelectedMonth('');
+    setSelectedYear('');
+  };
+
   /* This code updates the selected month based on the user-selected option in the event target. */
   const handleMonthChange = (event) => {
     setSelectedMonth(event.target.value);
@@ -180,35 +189,39 @@ const Table = () => {
       ) : (
         <>
           <FilterContainer>
-            <label>{filterMonthText}</label>
+            <Label>{filterMonthText}</Label>
             <Select value={selectedMonth} onChange={handleMonthChange}>
               {months.map((month) => (
-                <option key={month.value} value={month.value}>
+                <SelectOption key={month.value} value={month.value}>
                   {month.label}
-                </option>
+                </SelectOption>
               ))}
             </Select>
           </FilterContainer>
           <FilterContainer>
-            <label>{filterYearText}</label>
+            <Label>{filterYearText}</Label>
             <Select value={selectedYear} onChange={handleYearChange}>
               {years.map((year) => (
-                <option key={year.value} value={year.value}>
+                <SelectOption key={year.value} value={year.value}>
                   {year.label}
-                </option>
+                </SelectOption>
               ))}
             </Select>
           </FilterContainer>
           <FilterContainer>
-            <label>{chooseCurrencyText}</label>
+            <Label>{chooseCurrencyText}</Label>
             <Select value={currency} onChange={handleCurrencyChange}>
               {currencies.map((c) => (
-                <option key={c.label} value={c.label}>
+                <SelectOption key={c.label} value={c.label}>
                   {c.value}
-                </option>
+                </SelectOption>
               ))}
             </Select>
           </FilterContainer>
+            <ButtonWrapper>
+              <Label></Label>
+            <ClearFiltersButton onClick={handleClearFliter}>Clear Filters</ClearFiltersButton>
+            </ButtonWrapper>
           <StyledTable>
             <StyledThead>
               <StyledTr>
@@ -243,7 +256,7 @@ const Table = () => {
                   </StyledTd>
                   <StyledTd>
                     {editingExpenseId === expense.id ? (
-                      <select
+                      <Select
                         name='editCategory'
                         defaultValue={expense.category}
                       >
@@ -252,7 +265,7 @@ const Table = () => {
                             {option}
                           </option>
                         ))}
-                      </select>
+                      </Select>
                     ) : (
                       expense.category
                     )}
