@@ -18,6 +18,6 @@ export const PageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 49rem;
+  min-height: 100vh;
   background-color: #c0c0c0;
 `;
